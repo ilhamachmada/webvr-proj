@@ -7,6 +7,7 @@
     <title>Aframe VR</title>
     <script src="proj/lib/aframe.min.js"></script>
     <script src="proj/lib/aframe-environment-component.min.js"></script>
+    <script src="proj/lib/aframe-controller-cursor-component.min.js"></script>
 
 
   </head>
@@ -14,8 +15,6 @@
     <a-scene>
       <!--List asset source-->
       <a-assets>
-        <!--<a-asset-item id="space-obj" src="proj/asset/space/space.obj"></a-asset-item>
-        <a-asset-item id="space-mtl" src="proj/asset/space/space.mtl"></a-asset-item>-->
         <a-asset-item id="arm-gltf" src="proj/asset/arm/scene.gltf"></a-asset-item>
         <a-asset-item id="left" src="proj/asset/oculus-touch-controller-left.obj"></a-asset-item>
         <a-asset-item id="right" src="proj/asset/oculus-touch-controller-right.obj"></a-asset-item> 
@@ -25,8 +24,8 @@
       <a-entity environment="preset : forest; groundColor: #445; grid: cross; ligthPosition:1 5 -2; skytype: atmosphere"></a-entity>
       <a-entity id="rig" position="0 1.6 20">
         <a-entity id="camera" camera look-controls></a-entity>
-         <a-entity oculus-touch-controls="hand: left"></a-entity>
-         <a-entity oculus-touch-controls="hand: right"></a-entity>
+         <a-entity oculus-touch-controls="hand: left" controller-cursor></a-entity>
+         <a-entity oculus-touch-controls="hand: right" controller-cursor></a-entity>
       </a-entity>
 
         <!--<a-entity obj-model="obj: #space-obj; mtl: #space-mtl"></a-entity>-->
@@ -34,7 +33,3 @@
       </a-scene>
 </body>
 </html>
-
-<!--<script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
-<script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
-<script src="https://rawgit.com/chenzlabs/gearvr-controls/master/dist/aframe-gearvr-controls-component.min.js"></script>-->
