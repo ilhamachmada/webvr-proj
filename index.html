@@ -8,7 +8,6 @@
     <script src="proj/lib/aframe.min.js"></script>
     <script src="proj/lib/aframe-environment-component.min.js"></script>
     <script src="proj/lib/aframe-controller-cursor-component.min.js"></script>
-    <script src="proj/lib/aframe-motion-capture-components.min.js"></script>
     <script src="proj/lib/aframe-teleport-controls.min.js"></script>
     <script src="proj/lib/teleport-controller.js"></script>
 
@@ -33,7 +32,7 @@
                                       endEvenet: endtouch;
                                       curveShootingSpeed: 15;
                                       hitCylinderRadius: 1;
-                                      collisionEntities: [ground]">
+                                      collisionEntities: [ground]" controller-cursor>
          </a-entity>
          <a-entity oculus-touch-controls="hand: right" hand-controls="right" id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
       </a-entity>
