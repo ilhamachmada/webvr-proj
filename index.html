@@ -10,6 +10,32 @@
     <script src="proj/lib/aframe-controller-cursor-component.min.js"></script>
     <script src="proj/lib/aframe-motion-capture-components.min.js"></script>
     <script src="proj/lib/aframe-teleport-controls.min.js"></script>
+    
+     <script>
+      
+      let activeControllerPosition;
+      
+      AFRAME.registerComponent('controller', {
+        init: function () {
+          console.log('init left-hand: ', this.el);
+          const el = this.el;
+          
+          el.addEventListener('teleported', function(event){
+            console.log('eleported.event: ', event);
+            const activeController = event.target;
+            const head = document.querySelector('#head');
+            const newPosition = event.detail.newPosition;
+            // activeController.setAttribute('position', event.detail.newPosition);
+            activeController.object3D.position.set(`${newPosition.x}`, `${newPosition.y}`, `${newPosition.z}`);
+            
+            console.log('activeController: ', activeController);
+            console.log('head: ', head);
+            
+          }) 
+        }
+      })
+ 
+    </script>
 
 
   </head>
