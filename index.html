@@ -9,7 +9,7 @@
     <script src="proj/lib/aframe-environment-component.min.js"></script>
     <script src="proj/lib/aframe-controller-cursor-component.min.js"></script>
     <script src="proj/lib/aframe-teleport-controls.min.js"></script>
-    <script src="proj/lib/teleport-controller.js" type="text/javascript"></script> 
+   <!-- <script src="proj/lib/teleport-controller.js" type="text/javascript"></script>--> 
 
   </head>
 <body>
@@ -20,17 +20,10 @@
       </a-assets>
 
       <!--settingan awal-->
-      <a-entity ground environment="preset : forest; groundColor: #445; grid: cross; ligthPosition:1 5 -2; skytype: atmosphere"></a-entity>
+      <a-entity id="ground" environment="preset : forest; groundColor: #445; grid: cross; ligthPosition:1 5 -2; skytype: atmosphere"></a-entity>
       <a-entity id="cameraRig" position="0 1.6 20">
         <a-entity id="head" camera look-controls wasd-controls></a-entity>
-         <a-entity touch-listener oculus-touch-controls="hand: left" id="left-hand"  
-                   teleport-controls="cameraRig: #cameraRig; 
-                                      teleportOrigin: #head;
-                                      startEvent: starttouch;
-                                      endEvenet: endtouch;
-                                      curveShootingSpeed: 15;
-                                      hitCylinderRadius: 1;
-                                      collisionEntities: [ground]">
+         <a-entity oculus-touch-controls="hand: left" teleport-controls="button: trigger; collisionEntities: #ground">
          </a-entity>
          <a-entity oculus-touch-controls="hand: right" controller-cursor></a-entity>
       </a-entity>
