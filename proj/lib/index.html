@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="/proj/lib/aframe.min.js"></script>
+    <script src="/proj/lib/aframe-environment-component.min.js"></script>
+   
+  </head>
+<body>
+    <a-scene>
+      <!--List asset source-->
+      <a-assets>
+        <!--<a-asset-item id="space-obj" src="proj/asset/space/space.obj"></a-asset-item>
+        <a-asset-item id="space-mtl" src="proj/asset/space/space.mtl"></a-asset-item>-->
+        <a-asset-item id="arm-gltf" src="proj/asset/arm/scene.gltf"></a-asset-item>
+        <a-asset-item id="gearvr-obj" src="proj/asset/gearvr-control/gear_vr_controller.obj"></a-asset-item>
+        <a-asset-item id="gearvr-mtl" src="proj/asset/gearvr-control/gear_vr_controller.mtl"></a-asset-item> 
+      </a-assets>
+
+      <!--settingan awal-->
+      <a-entity environment="preset : forest; groundColor: #445; grid: cross; ligthPosition:1 5 -2; skytype: atmosphere"></a-entity>
+      <a-entity id="rig" position="0 10 20">
+        <a-entity id="camera" camera look-controls></a-entity>
+      </a-entity>
+
+      <a-entity id="lefthand" auto-detect-controllers="hand: left"></a-entity>
+      <a-entity id="righthand" auto-detect-controllers="hand: right"></a-entity>
+
+        <!--<a-entity obj-model="obj: #space-obj; mtl: #space-mtl"></a-entity>-->
+        <a-entity gltf-model="#arm-gltf"></a-entity>
+      </a-scene>
+</body>
+</html>
