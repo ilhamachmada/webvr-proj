@@ -25,11 +25,10 @@
 
       <!--settingan awal-->
       <a-entity environment="preset : forest; groundColor: #445; grid: cross; ligthPosition:1 5 -2; skytype: atmosphere"></a-entity>
-      <a-entity id="cameraRig" >
-       <a-entity id="cameraRig" position="0 1.6 20">
+      <a-entity id="cameraRig" position="0 1.6 20">
         <a-entity id="head" camera look-controls wasd-controls></a-entity>
-         <a-entity hand-controls="left" id="left-hand"  teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
-         <a-entity hand-controls="right" id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+         <a-entity oculus-touch-controls="hand: left" id="left-hand"  teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+         <a-entity oculus-touch-controls="hand: right" hand-controls="right" id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
       </a-entity>
 
         <!--<a-entity obj-model="obj: #space-obj; mtl: #space-mtl"></a-entity>-->
