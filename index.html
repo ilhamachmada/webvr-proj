@@ -9,7 +9,7 @@
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script> 
     <script src="https://unpkg.com/aframe-controller-cursor-component@0.2.7/dist/aframe-controller-cursor-component.min.js"></script> 
     <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script> 
-    <script src="proj/lib/teleport-controller.js" type="text/javascript"></script>
+    <script src="/proj/lib/teleport-controller.js" type="text/javascript"></script>
 
   </head>
 <body>
@@ -22,8 +22,8 @@
       <!--settingan awal-->
      <a-entity ground environment="preset : forest; groundColor: #445; grid: cross; ligthPosition:1 5 -2; skytype: atmosphere"></a-entity>
       <a-entity id="cameraRig" position="0 1.6 20">
-        <a-entity id="head" camera look-controls wasd-controls></a-entity>
-         <a-entity touch-listener oculus-touch-controls="hand: left" id="left-hand"  
+        <a-entity id="head"position="0 0 20" camera="userHeight:1.6" look-controls="pointerLockEnabled:true"></a-entity>
+         <a-entity position="0.1 -0.1 0" touch-listener oculus-touch-controls="hand: left" id="left-hand"  
                    teleport-controls="cameraRig: #cameraRig; 
                                       teleportOrigin: #head;
                                       startEvent: starttouch;
@@ -35,8 +35,8 @@
          <a-entity oculus-touch-controls="hand: right" controller-cursor></a-entity>
       </a-entity>
 
-        <!--<a-entity obj-model="obj: #space-obj; mtl: #space-mtl"></a-entity>-->
-        <a-entity ground gltf-model="#arm-gltf"></a-entity>
+        <!--<a-entity obj-model="obj: #space-obj; mtl: #space-mtl"></a-entity>
+        <a-entity ground gltf-model="#arm-gltf"></a-entity>-->
       </a-scene>
 </body>
 </html>
