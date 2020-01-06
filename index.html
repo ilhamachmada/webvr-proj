@@ -20,7 +20,7 @@
       </a-assets>
 
       <!--settingan awal-->
-     <a-entity ground environment="preset : forest; groundColor: #445; grid: cross; ligthPosition:1 5 -2; skytype: atmosphere"></a-entity>
+     <a-entity id="ground" environment="preset : forest; groundColor: #445; grid: cross; ligthPosition:1 5 -2; skytype: atmosphere"></a-entity>
       <a-entity id="cameraRig" position="0 1.6 20">
         <a-entity id="head"position="0 0 20" camera="userHeight:1.6" look-controls="pointerLockEnabled:true"></a-entity>
          <a-entity position="0.1 -0.1 0" touch-listener oculus-touch-controls="hand: left" id="left-hand"  
@@ -30,7 +30,7 @@
                                       endEvenet: endtouch;
                                       curveShootingSpeed: 15;
                                       hitCylinderRadius: 1;
-                                      collisionEntities: [ground]">
+                                      collisionEntities: #ground">
          </a-entity>
          <a-entity oculus-touch-controls="hand: right" controller-cursor></a-entity>
       </a-entity>
