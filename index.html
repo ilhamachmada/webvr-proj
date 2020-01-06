@@ -9,6 +9,7 @@
     <script src="proj/lib/aframe-environment-component.min.js"></script>
     <script src="proj/lib/aframe-controller-cursor-component.min.js"></script>
     <script src="proj/lib/aframe-motion-capture-components.min.js"></script>
+    <script src="proj/lib/aframe-teleport-controls.min.js"></script>
 
 
   </head>
@@ -23,10 +24,12 @@
 
       <!--settingan awal-->
       <a-entity environment="preset : forest; groundColor: #445; grid: cross; ligthPosition:1 5 -2; skytype: atmosphere"></a-entity>
-      <a-entity id="rig" position="0 1.6 20">
-        <a-entity id="camera" camera look-controls></a-entity>
+      <a-entity id="cameraRig" >
+        <a-entity id="head" camera look-controls wasd-controls position="0 1.6 20"></a-entity>
          <a-entity hand-controls="left"></a-entity>
          <a-entity hand-controls="right"></a-entity>
+         <a-entity id="left-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+         <a-entity id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
       </a-entity>
 
         <!--<a-entity obj-model="obj: #space-obj; mtl: #space-mtl"></a-entity>-->
