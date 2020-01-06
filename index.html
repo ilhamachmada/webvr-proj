@@ -24,12 +24,12 @@
 
       <!--settingan awal-->
       <a-entity environment="preset : forest; groundColor: #445; grid: cross; ligthPosition:1 5 -2; skytype: atmosphere"></a-entity>
-      <a-entity id="rig" position="0 10 20">
+      <a-entity id="rig" position="0 1.6 20">
         <a-entity id="camera" camera look-controls></a-entity>
       </a-entity>
 
-      <a-entity id="lefthand" auto-detect-controllers="hand:left model:#left"></a-entity>
-      <a-entity id="righthand" auto-detect-controllers="hand:right model:#right"></a-entity>
+      <a-entity oculus-touch-controls="hand: left"></a-entity>
+      <a-entity oculus-touch-controls="hand: right"></a-entity>
       
         <!--<a-entity obj-model="obj: #space-obj; mtl: #space-mtl"></a-entity>-->
         <a-entity gltf-model="#arm-gltf"></a-entity>
