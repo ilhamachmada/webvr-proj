@@ -8,6 +8,7 @@
     <script src="proj/lib/aframe.min.js"></script>
     <script src="proj/lib/aframe-environment-component.min.js"></script>
     <script src="proj/lib/oculus-touch-controls.js"></script>
+    <script src="proj/lib/laser-controls.js"></script>
 
 
   </head>
@@ -26,8 +27,12 @@
       <a-entity environment="preset : forest; groundColor: #445; grid: cross; ligthPosition:1 5 -2; skytype: atmosphere"></a-entity>
       <a-entity id="rig" position="0 1.6 20">
         <a-entity id="camera" camera look-controls></a-entity>
-        <a-entity oculus-touch-controls="hand: left"></a-entity>
-        <a-entity oculus-touch-controls="hand: right"></a-entity>
+        <a-entity oculus-touch-controls="hand: left">
+          <a-entity laser-controls="hand: left"></a-entity>
+        </a-entity>
+        <a-entity oculus-touch-controls="hand: right">
+          <a-entity laser-controls="hand: right"></a-entity>
+        </a-entity>
       </a-entity>
 
         <!--<a-entity obj-model="obj: #space-obj; mtl: #space-mtl"></a-entity>-->
@@ -35,3 +40,7 @@
       </a-scene>
 </body>
 </html>
+
+<!--<script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+<script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+<script src="https://rawgit.com/chenzlabs/gearvr-controls/master/dist/aframe-gearvr-controls-component.min.js"></script>-->
