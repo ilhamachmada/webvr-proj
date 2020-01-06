@@ -17,8 +17,8 @@
         <!--<a-asset-item id="space-obj" src="proj/asset/space/space.obj"></a-asset-item>
         <a-asset-item id="space-mtl" src="proj/asset/space/space.mtl"></a-asset-item>-->
         <a-asset-item id="arm-gltf" src="proj/asset/arm/scene.gltf"></a-asset-item>
-        <a-asset-item id="gearvr-obj" src="proj/asset/gearvr-control/gear_vr_controller.obj"></a-asset-item>
-        <a-asset-item id="gearvr-mtl" src="proj/asset/gearvr-control/gear_vr_controller.mtl"></a-asset-item> 
+        <a-asset-item id="left" src="proj/asset/oculus-touch-controller-left.obj"></a-asset-item>
+        <a-asset-item id="right" src="proj/asset/oculus-touch-controller-right.obj"></a-asset-item> 
       </a-assets>
 
       <!--settingan awal-->
@@ -27,11 +27,12 @@
         <a-entity id="camera" camera look-controls></a-entity>
       </a-entity>
 
-      <a-entity oculus-touch-controls="hand: left"></a-entity>
-      <a-entity oculus-touch-controls="hand: right"></a-entity>
+      <a-entity id="lefthand" auto-detect-controllers="hand:left model:#left"></a-entity>
+      <a-entity id="righthand" auto-detect-controllers="hand:right model:#right"></a-entity>
       
         <!--<a-entity obj-model="obj: #space-obj; mtl: #space-mtl"></a-entity>-->
         <a-entity gltf-model="#arm-gltf"></a-entity>
       </a-scene>
 </body>
 </html>
+oculus-touch-controller-left.obj
