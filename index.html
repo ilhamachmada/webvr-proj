@@ -9,7 +9,7 @@
     <script src="proj/lib/aframe-environment-component.min.js"></script>
     <script src="proj/lib/aframe-controller-cursor-component.min.js"></script>
     <script src="proj/lib/aframe-teleport-controls.min.js"></script>
-    <script src="proj/lib/teleport-controller.js"></script>
+    <!--<script src="proj/lib/teleport-controller.js"></script>-->
 
   </head>
 <body>
@@ -17,24 +17,16 @@
       <!--List asset source-->
       <a-assets>
         <a-asset-item id="arm-gltf" src="proj/asset/arm/scene.gltf"></a-asset-item>
-        <a-asset-item id="left" src="proj/asset/oculus-touch-controller-left.obj"></a-asset-item>
-        <a-asset-item id="right" src="proj/asset/oculus-touch-controller-right.obj"></a-asset-item> 
       </a-assets>
 
       <!--settingan awal-->
       <a-entity ground environment="preset : forest; groundColor: #445; grid: cross; ligthPosition:1 5 -2; skytype: atmosphere"></a-entity>
       <a-entity id="cameraRig" position="0 1.6 20">
         <a-entity id="head" camera look-controls wasd-controls></a-entity>
-         <a-entity touch-listener oculus-touch-controls="hand: left" id="left-hand"  
-                   teleport-controls="cameraRig: #cameraRig; 
-                                      teleportOrigin: #head;
-                                      startEvent: starttouch;
-                                      endEvenet: endtouch;
-                                      curveShootingSpeed: 15;
-                                      hitCylinderRadius: 1;
-                                      collisionEntities: [ground]" controller-cursor>
+         <a-entity oculus-touch-controls="hand: left" id="left-hand"  
+                   teleport-controls="type: parabolic; collisionEntities: [ground]" controller-cursor>
          </a-entity>
-         <a-entity oculus-touch-controls="hand: right" hand-controls="right" id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+         <a-entity oculus-touch-controls="hand: right" hand-controls="right"></a-entity>
       </a-entity>
 
         <!--<a-entity obj-model="obj: #space-obj; mtl: #space-mtl"></a-entity>-->
