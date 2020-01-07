@@ -20,7 +20,7 @@
       </a-assets>
 
       <!--settingan awal-->
-     <a-entity ground environment="preset : forest; groundColor: #445; grid: cross; ligthPosition:1 5 -2; skytype: atmosphere"></a-entity>
+     <a-entity id="ground" environment="preset : forest; groundColor: #445; grid: cross; ligthPosition:1 5 -2; skytype: atmosphere"></a-entity>
       <a-entity id="cameraRig" position="0 1.6 20">
         <a-entity id="head" camera look-controls></a-entity>
          <a-entity oculus-touch-controls="hand: left" id="left-hand"  
@@ -34,7 +34,7 @@
       </a-entity>
 
         <!--<a-entity obj-model="obj: #space-obj; mtl: #space-mtl"></a-entity>-->
-        <a-entity ground gltf-model="#arm-gltf"></a-entity>
+        <a-entity id="objek" gltf-model="#arm-gltf"></a-entity>
       </a-scene>
 </body>
 </html>
