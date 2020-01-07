@@ -24,13 +24,17 @@
       <a-entity id="cameraRig" position="0 1.6 20">
         <a-entity id="head" camera look-controls></a-entity>
          <a-entity oculus-touch-controls="hand: left" id="left-hand"  
-                   teleport-controls="button: trigger;
+                   teleport-controls="cameraRig: #cameraRig; 
+                                      teleportOrigin: #head;
+                                      button: trigger;
+                                      type : line;
+                                      curveShootingSpeed: 30;
                                       collisionEntities: #ground">
          </a-entity>
          <a-entity oculus-touch-controls="hand: right" controller-cursor></a-entity>
       </a-entity>
 
-        <!--<a-entity obj-model="obj: #space-obj; mtl: #space-mtl"></a-entity>
+        <!--<a-entity obj-model="obj: #space-obj; mtl: #space-mtl"></a-entity>-->
         <a-entity ground gltf-model="#arm-gltf"></a-entity>-->
       </a-scene>
 </body>
